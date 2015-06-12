@@ -2,30 +2,35 @@
 <head>
 
 <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-<script src="jquery.min.js"></script>
+<script src="JQuery.js"></script>
 
 <script>
 
 $(document).ready(function(){
+	var done=0;
     $(document).mousemove(function(event){
-        $("span").text(event.pageX + ", " + event.pageY);
+    	if(event.pageX>1300 && done==0)
+		{
+	   		jQuery('#menu').toggle('show');
+			done=1; // ToggleShow()
+		}
+		else if(event.pageX<1300 && done==1)
+		{
+			done=0; // ToggleHide()
+			jQuery('#menu').toggle('show');
+		}
+	   
     });
 });
 
 jQuery(document).ready(function(){
 	// ToggleHide() the menu
     jQuery('#menu').toggle('show');
-    // ToggleShow() the menu when the mouse over to the right edge
-    jQuery('#rightcorner').live('mouseover', function(event) {        
-         jQuery('#menu').toggle('show');
-    });
 });
 </script>
 
 </head>
 <body>
-<div id="content"></div>
-<div id="rightcorner"></div>
-<div id="menu"></div>
+<div id="content"><div id="menu"></div></div>
 </body>
 </html>
