@@ -1,0 +1,31 @@
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+<script src="jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+    $(document).mousemove(function(event){
+        $("span").text(event.pageX + ", " + event.pageY);
+    });
+});
+
+jQuery(document).ready(function(){
+	// ToggleHide() the menu
+    jQuery('#menu').toggle('show');
+    // ToggleShow() the menu when the mouse over to the right edge
+    jQuery('#rightcorner').live('mouseover', function(event) {        
+         jQuery('#menu').toggle('show');
+    });
+});
+</script>
+
+</head>
+<body>
+<div id="content"></div>
+<div id="rightcorner"></div>
+<div id="menu"></div>
+</body>
+</html>
