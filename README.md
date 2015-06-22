@@ -1,2 +1,6 @@
 # HTMLMenu
-Show Hide menu for an html template.
+Show Hide menu html template.
+
+#### Document.mouseMove(eventArgs) are taken into accout in order to detect the position of the mouse pointer.
+
+

@@ -1,6 +1,6 @@
 <html>
 <head>
-
+<title>Show/Hide Menu Example</title>
 <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 <script src="JQuery.js"></script>
 
@@ -8,13 +8,16 @@
 
 $(document).ready(function(){
 	var done=0;
+	var showPos=1300;
+	var hidePos=1000;
+	
     $(document).mousemove(function(event){
-    	if(event.pageX>1300 && done==0)
+    	if(event.pageX>showPos && done==0)
 		{
 	   		jQuery('#menu').toggle('show');
 			done=1; // ToggleShow()
 		}
-		else if(event.pageX<1300 && done==1)
+		else if(event.pageX<hidePos && done==1)
 		{
 			done=0; // ToggleHide()
 			jQuery('#menu').toggle('show');
